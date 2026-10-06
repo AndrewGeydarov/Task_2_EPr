@@ -1,0 +1,57 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewmodels="using:Task_2_EPr.ViewModels"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Task_2_EPr.NavigationWindow"
+        x:DataType="viewmodels:MainViewModel"
+        Title="NavigationWindow">
+    <Grid ColumnDefinitions="200, *">
+        <Grid Name="NavBarG" RowDefinitions="5*, *">
+            <StackPanel Margin="10" Spacing="10" Grid.Row="0">
+                <Button HorizontalAlignment="Stretch" CornerRadius="6" Click="Button_Click" Name="Review">
+                    <StackPanel>
+                        <TextBlock Text="Обзор"/>
+                    </StackPanel>
+                </Button>
+                <Button HorizontalAlignment="Stretch" CornerRadius="6" Click="Button_Click" Name="Projects">
+                    <StackPanel>
+                        <TextBlock Text="Проекты"/>
+                    </StackPanel>
+                </Button>
+                <Button HorizontalAlignment="Stretch" CornerRadius="6" Click="Button_Click" Name="Tasks">
+                    <StackPanel>
+                        <TextBlock Text="Задачи"/>
+                    </StackPanel>
+                </Button>
+                <Button HorizontalAlignment="Stretch" CornerRadius="6" Click="Button_Click" Name="Calendar">
+                    <StackPanel>
+                        <TextBlock Text="Календарь"/>
+                    </StackPanel>
+                </Button>
+                <Button HorizontalAlignment="Stretch" CornerRadius="6" Click="Button_Click" Name="Team">
+                    <StackPanel>
+                        <TextBlock Text="Команда"/>
+                    </StackPanel>
+                </Button>
+                <Button HorizontalAlignment="Stretch" CornerRadius="6" Click="Button_Click" Name="Settings">
+                    <StackPanel>
+                        <TextBlock Text="Настройки"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Margin="10" Spacing="10">
+                <TextBlock Text="{Binding UserName}" TextAlignment="Left" Margin="10 0"></TextBlock>
+                <Button HorizontalAlignment="Stretch" CornerRadius="6" Click="Button_Click" Name="Exit">
+                    <StackPanel>
+                        <TextBlock Text="Выйти"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Column="1" Margin="10">
+            <ContentControl Name="MainPageCC" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" ></ContentControl>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,111 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Task_2_EPr.ReviewPage">
+    <Grid>
+        <Border Background="{DynamicResource PageBackgroundBrush}" VerticalAlignment="Stretch" CornerRadius="10" BorderBrush="{DynamicResource DefaultBorderBrush}" BorderThickness="1">
+            <Grid Margin="10" RowDefinitions="*, 4*, 13*">
+                <StackPanel Margin="10 0 0 15" Grid.Row="0">
+                    <TextBlock FontSize="15" FontWeight="DemiBold">Обзор</TextBlock>
+                </StackPanel>
+                <Grid ColumnDefinitions="*, *, *, *" ColumnSpacing="10" Grid.Row="1" Margin="10 0 10 0">
+                    <Border Background="{DynamicResource CardBackgroundBrush}" Grid.Column="0" CornerRadius="10" Padding="10" BorderBrush="{DynamicResource DefaultBorderBrush}" BorderThickness="1">
+                        <StackPanel Spacing="3">
+                            <TextBlock FontSize="13">Проекты</TextBlock>
+                            <TextBlock FontSize="20" FontWeight="Bold">12</TextBlock>
+                            <TextBlock FontSize="13">Активных проектов</TextBlock>
+                        </StackPanel>
+                    </Border>
+                    <Border Background="{DynamicResource CardBackgroundBrush}" Grid.Column="1" CornerRadius="10" Padding="10" BorderBrush="{DynamicResource DefaultBorderBrush}" BorderThickness="1">
+                        <StackPanel Spacing="3">
+                            <TextBlock FontSize="13">Задачи</TextBlock>
+                            <TextBlock FontSize="20" FontWeight="Bold">48</TextBlock>
+                            <TextBlock FontSize="13">В работе</TextBlock>
+                        </StackPanel>
+                    </Border>
+                    <Border Background="{DynamicResource CardBackgroundBrush}" Grid.Column="2" CornerRadius="10" Padding="10" BorderBrush="{DynamicResource DefaultBorderBrush}" BorderThickness="1">
+                        <StackPanel Spacing="3">
+                            <TextBlock FontSize="13">Команда</TextBlock>
+                            <TextBlock FontSize="20" FontWeight="Bold">8</TextBlock>
+                            <TextBlock FontSize="13">Участников</TextBlock>
+                        </StackPanel>
+                    </Border>
+                    <Border Background="{DynamicResource CardBackgroundBrush}" Grid.Column="3" CornerRadius="10" Padding="10" BorderBrush="{DynamicResource DefaultBorderBrush}" BorderThickness="1">
+                        <StackPanel Spacing="3">
+                            <TextBlock FontSize="13">Сроки</TextBlock>
+                            <TextBlock FontSize="20" Foreground="Red" FontWeight="Bold">5</TextBlock>
+                            <TextBlock FontSize="13" Foreground="Red">Просрочено</TextBlock>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+                <Grid ColumnDefinitions="2*, *" Grid.Row="2" Margin="10" ColumnSpacing="10">
+                    <Grid RowDefinitions="2*, 2*" RowSpacing="10">
+                        <Border Grid.Row="0" Background="{DynamicResource CardBackgroundBrush}" CornerRadius="10" Padding="15" BorderBrush="{DynamicResource DefaultBorderBrush}" BorderThickness="1">
+                            <Grid RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="12">
+                                <TextBlock Grid.Row="0" Text="Активные проекты" FontSize="16" FontWeight="SemiBold" Margin="0,0,0,5"/>
+                                <Grid Grid.Row="1" ColumnDefinitions="180,120,*,45" RowDefinitions="Auto,6" ColumnSpacing="10">
+                                    <TextBlock Grid.Column="0" Grid.RowSpan="2" Text="Avalonia UI Redesign" VerticalAlignment="Center"/>
+                                    <Border Grid.Column="1" Background="{DynamicResource DesignTagBackgroundBrush}" CornerRadius="5" Padding="7,3" HorizontalAlignment="Left">
+                                        <TextBlock Text="Дизайн" Foreground="{DynamicResource DesignTagTextBrush}" FontSize="12"/>
+                                    </Border>
+                                    <ProgressBar Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Minimum="0" Maximum="100" Value="65" Foreground="{DynamicResource DesignTagTextBrush}" Background="{DynamicResource ProgressTrackBrush}" Height="4" Margin="0,5,0,0"/>
+                                    <TextBlock Grid.Column="3" Grid.RowSpan="2" Text="65%" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                </Grid>
+                                <Grid Grid.Row="2" ColumnDefinitions="180,120,*,45" RowDefinitions="Auto,6" ColumnSpacing="10">
+                                    <TextBlock Grid.Column="0" Grid.RowSpan="2" Text="Мобильное приложение" VerticalAlignment="Center"/>
+                                    <Border Grid.Column="1" Background="{DynamicResource DevelopmentTagBackgroundBrush}" CornerRadius="5" Padding="7,3" HorizontalAlignment="Left">
+                                        <TextBlock Text="Разработка" Foreground="{DynamicResource DevelopmentTagTextBrush}" FontSize="12"/>
+                                    </Border>
+                                    <ProgressBar Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Minimum="0" Maximum="100" Value="40" Foreground="#5D95D8" Background="{DynamicResource ProgressTrackBrush}" Height="4" Margin="0,5,0,0"/>
+                                    <TextBlock Grid.Column="3" Grid.RowSpan="2" Text="40%" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                </Grid>
+                                <Grid Grid.Row="3" ColumnDefinitions="180,120,*,45" RowDefinitions="Auto,6" ColumnSpacing="10">
+                                    <TextBlock Grid.Column="0" Grid.RowSpan="2" Text="Корпоративный сайт" VerticalAlignment="Center"/>
+                                    <Border Grid.Column="1" Background="{DynamicResource MarketingTagBackgroundBrush}" CornerRadius="5" Padding="7,3" HorizontalAlignment="Left">
+                                        <TextBlock Text="Разработка" Foreground="{DynamicResource MarketingTagTextBrush}" FontSize="12"/>
+                                    </Border>
+                                    <ProgressBar Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Minimum="0" Maximum="100" Value="80" Foreground="#62B879" Background="{DynamicResource ProgressTrackBrush}" Height="4" Margin="0,5,0,0"/>
+                                    <TextBlock Grid.Column="3" Grid.RowSpan="2" Text="80%" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                </Grid>
+                            </Grid>
+                        </Border>
+                        <Border Grid.Row="1" Background="{DynamicResource CardBackgroundBrush}" CornerRadius="10" Padding="15" BorderBrush="{DynamicResource DefaultBorderBrush}" BorderThickness="1">
+                            <Grid RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="12">
+                                <TextBlock Grid.Row="0" Text="Последние задачи" FontSize="16" FontWeight="SemiBold" Margin="0,0,0,5"/>
+                                <Grid Grid.Row="1" ColumnDefinitions="Auto,*,Auto,90" ColumnSpacing="10">
+                                    <CheckBox Grid.Column="0" VerticalAlignment="Center"/>
+                                    <TextBlock Grid.Column="1" Text="Разработать макет главной страницы" VerticalAlignment="Center"/>
+                                    <Border Grid.Column="2" Background="{DynamicResource DesignTagBackgroundBrush}" CornerRadius="5" Padding="7,3" HorizontalAlignment="Left">
+                                        <TextBlock Text="Дизайн" Foreground="{DynamicResource DesignTagTextBrush}" FontSize="12"/>
+                                    </Border>
+                                    <TextBlock Grid.Column="3" Text="15.05.2024" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="{DynamicResource SecondaryTextBrush}"/>
+                                </Grid>
+                                <Grid Grid.Row="2" ColumnDefinitions="Auto,*,Auto,90" ColumnSpacing="10">
+                                    <CheckBox Grid.Column="0" VerticalAlignment="Center"/>
+                                    <TextBlock Grid.Column="1" Text="Реализовать авторизацию" VerticalAlignment="Center"/>
+                                    <Border Grid.Column="2" Background="{DynamicResource DevelopmentTagBackgroundBrush}" CornerRadius="5" Padding="7,3" HorizontalAlignment="Left">
+                                        <TextBlock Text="Разработка" Foreground="{DynamicResource DevelopmentTagTextBrush}" FontSize="12"/>
+                                    </Border>
+                                    <TextBlock Grid.Column="3" Text="14.05.2024" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="{DynamicResource SecondaryTextBrush}"/>
+                                </Grid>
+                                <Grid Grid.Row="3" ColumnDefinitions="Auto,*,Auto,90" ColumnSpacing="10">
+                                    <CheckBox Grid.Column="0" VerticalAlignment="Center"/>
+                                    <TextBlock Grid.Column="1" Text="Подготовить презентацию" VerticalAlignment="Center"/>
+                                    <Border Grid.Column="2" Background="{DynamicResource MarketingTagBackgroundBrush}" CornerRadius="5" Padding="7,3" HorizontalAlignment="Left">
+                                        <TextBlock Text="Маркетинг" Foreground="{DynamicResource MarketingTagTextBrush}" FontSize="12"/>
+                                    </Border>
+                                    <TextBlock Grid.Column="3" Text="13.05.2024" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="{DynamicResource SecondaryTextBrush}"/>
+                                </Grid>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                    <Border Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center">
+                        <Calendar CornerRadius="10" HorizontalAlignment="Stretch" BorderBrush="{DynamicResource DefaultBorderBrush}" BorderThickness="1"></Calendar>
+                    </Border>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

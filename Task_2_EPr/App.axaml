@@ -1,0 +1,85 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="Task_2_EPr.App"
+             xmlns:local="using:Task_2_EPr"
+             RequestedThemeVariant="Light">
+    <Application.DataTemplates>
+        <local:ViewLocator />
+    </Application.DataTemplates>
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary x:Key="Light">
+                    <SolidColorBrush x:Key="WindowBackgroundBrush">#FFFFFF</SolidColorBrush>
+                    <SolidColorBrush x:Key="PageBackgroundBrush">#F5F6F8</SolidColorBrush>
+                    <SolidColorBrush x:Key="NavigationBackgroundBrush">#F5F6F8</SolidColorBrush>
+                    <SolidColorBrush x:Key="CardBackgroundBrush">#FFFFFF</SolidColorBrush>
+                    <SolidColorBrush x:Key="DefaultBorderBrush">#E5E5E5</SolidColorBrush>
+                    <SolidColorBrush x:Key="PrimaryTextBrush">#202124</SolidColorBrush>
+                    <SolidColorBrush x:Key="SecondaryTextBrush">#666666</SolidColorBrush>
+                    <SolidColorBrush x:Key="NavigationButtonTextBrush">#202124</SolidColorBrush>
+                    <SolidColorBrush x:Key="NavigationSelectedBackgroundBrush">#DFDAF7</SolidColorBrush>
+                    <SolidColorBrush x:Key="NavigationSelectedTextBrush">#7656C9</SolidColorBrush>
+                    <SolidColorBrush x:Key="ProgressTrackBrush">#E9E9E9</SolidColorBrush>
+                    <SolidColorBrush x:Key="DesignTagBackgroundBrush">#F0EAFF</SolidColorBrush>
+                    <SolidColorBrush x:Key="DesignTagTextBrush">#7656C9</SolidColorBrush>
+                    <SolidColorBrush x:Key="DevelopmentTagBackgroundBrush">#E7F1FF</SolidColorBrush>
+                    <SolidColorBrush x:Key="DevelopmentTagTextBrush">#4B83C4</SolidColorBrush>
+                    <SolidColorBrush x:Key="MarketingTagBackgroundBrush">#E9F7ED</SolidColorBrush>
+                    <SolidColorBrush x:Key="MarketingTagTextBrush">#4B9B69</SolidColorBrush>
+                </ResourceDictionary>
+                <ResourceDictionary x:Key="Dark">
+                    <SolidColorBrush x:Key="WindowBackgroundBrush">#111417</SolidColorBrush>
+                    <SolidColorBrush x:Key="PageBackgroundBrush">#171B1F</SolidColorBrush>
+                    <SolidColorBrush x:Key="NavigationBackgroundBrush">#15191D</SolidColorBrush>
+                    <SolidColorBrush x:Key="CardBackgroundBrush">#23282D</SolidColorBrush>
+                    <SolidColorBrush x:Key="DefaultBorderBrush">#30363B</SolidColorBrush>
+                    <SolidColorBrush x:Key="PrimaryTextBrush">#F2F3F4</SolidColorBrush>
+                    <SolidColorBrush x:Key="SecondaryTextBrush">#A4ABB2</SolidColorBrush>
+                    <SolidColorBrush x:Key="NavigationButtonTextBrush">#F2F3F4</SolidColorBrush>
+                    <SolidColorBrush x:Key="NavigationSelectedBackgroundBrush">#473ABD</SolidColorBrush>
+                    <SolidColorBrush x:Key="NavigationSelectedTextBrush">#FFFFFF</SolidColorBrush>
+                    <SolidColorBrush x:Key="ProgressTrackBrush">#363C42</SolidColorBrush>
+                    <SolidColorBrush x:Key="DesignTagBackgroundBrush">#302A42</SolidColorBrush>
+                    <SolidColorBrush x:Key="DesignTagTextBrush">#B7A2FF</SolidColorBrush>
+                    <SolidColorBrush x:Key="DevelopmentTagBackgroundBrush">#243442</SolidColorBrush>
+                    <SolidColorBrush x:Key="DevelopmentTagTextBrush">#82B7E8</SolidColorBrush>
+                    <SolidColorBrush x:Key="MarketingTagBackgroundBrush">#263A2E</SolidColorBrush>
+                    <SolidColorBrush x:Key="MarketingTagTextBrush">#7CCC94</SolidColorBrush>
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+
+    <Application.Styles>
+        <FluentTheme />
+        <StyleInclude Source="avares://Avalonia.Controls.DataGrid/Themes/Fluent.xaml"/>
+        <Style Selector="Window">
+            <Setter Property="Background" Value="{DynamicResource WindowBackgroundBrush}"/>
+        </Style>
+        <Style Selector="Grid#NavBarG">
+            <Setter Property="Background" Value="{DynamicResource NavigationBackgroundBrush}"/>
+        </Style>
+        <Style Selector="Grid#NavBarG Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="{DynamicResource NavigationButtonTextBrush}"/>
+        </Style>
+        <Style Selector="Grid#NavBarG Button TextBlock">
+            <Setter Property="Foreground" Value="{DynamicResource NavigationButtonTextBrush}"/>
+        </Style>
+        <Style Selector="Grid#NavBarG Button.selected">
+            <Setter Property="Background" Value="{DynamicResource NavigationSelectedBackgroundBrush}"/>
+            <Setter Property="Foreground" Value="{DynamicResource NavigationSelectedTextBrush}"/>
+        </Style>
+        <Style Selector="Grid#NavBarG Button.selected TextBlock">
+            <Setter Property="Foreground" Value="{DynamicResource NavigationSelectedTextBrush}"/>
+        </Style>
+        <Style Selector="Grid#NavBarG Button.selected:pointerover">
+            <Setter Property="Background" Value="{DynamicResource NavigationSelectedBackgroundBrush}"/>
+        </Style>
+        <Style Selector="Grid#NavBarG Button.selected:pressed">
+            <Setter Property="Background" Value="{DynamicResource NavigationSelectedBackgroundBrush}"/>
+        </Style>
+    </Application.Styles>
+</Application>
