@@ -1,0 +1,24 @@
+<Window xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Class="Task_2_EPr.Views.AddProjectWindow" Title="Добавление проекта" Width="470" Height="350" MinWidth="430" CanResize="False" WindowStartupLocation="CenterOwner" ShowInTaskbar="False">
+    <Grid RowDefinitions="Auto,*,Auto" Background="{DynamicResource WindowBackgroundBrush}">
+        <Border BorderBrush="{DynamicResource DefaultBorderBrush}" BorderThickness="0,0,0,1" Padding="24,19">
+            <StackPanel Spacing="5">
+                <TextBlock Text="Новый проект" FontSize="21" FontWeight="SemiBold" Foreground="{DynamicResource PrimaryTextBrush}"/>
+                <TextBlock Text="Заполните информацию о проекте" FontSize="12" Foreground="{DynamicResource SecondaryTextBrush}"/>
+            </StackPanel>
+        </Border>
+        <StackPanel Grid.Row="1" Margin="24,19,24,10" Spacing="8">
+            <TextBlock Text="Название проекта *" FontSize="13" FontWeight="Medium" Foreground="{DynamicResource PrimaryTextBrush}"/>
+            <TextBox x:Name="ProjectNameBox" Watermark="Например, Разработка сайта" CornerRadius="7" MaxLength="150"/>
+            <TextBlock Text="Срок завершения" FontSize="13" FontWeight="Medium" Margin="0,7,0,0" Foreground="{DynamicResource PrimaryTextBrush}"/>
+            <DatePicker x:Name="DeadlinePicker" HorizontalAlignment="Stretch"/>
+            <TextBlock Text="* Обязательное поле" FontSize="12" Margin="0,4,0,0" Foreground="{DynamicResource SecondaryTextBrush}"/>
+            <TextBlock x:Name="ErrorText" Foreground="#D9534F" FontSize="12" IsVisible="False" TextWrapping="Wrap"/>
+        </StackPanel>
+        <Border Grid.Row="2" BorderBrush="{DynamicResource DefaultBorderBrush}" BorderThickness="0,1,0,0" Padding="24,14">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10">
+                <Button Content="Отмена" MinWidth="100" HorizontalContentAlignment="Center" CornerRadius="7" Padding="14,8" Click="Cancel_Click"/>
+                <Button Content="Добавить" MinWidth="112" HorizontalContentAlignment="Center" CornerRadius="7" Padding="14,8" Background="#7656C9" Foreground="White" Click="Add_Click"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
