@@ -1,18 +1,144 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Width="400" Height="330"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        d:DesignWidth="820" d:DesignHeight="520"
+        Width="820" Height="520"
+        CanResize="False"
+        WindowStartupLocation="CenterScreen"
         x:Class="Task_2_EPr.Views.MainWindow"
-        Title="Авторизация">
-    <Grid>
-        <Border Background="{DynamicResource PageBackgroundBrush}" Margin="10" CornerRadius="10">
-            <StackPanel Margin="20" Spacing="12" VerticalAlignment="Center">
-                <TextBlock Text="Авторизация" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold" Margin="0 0 0 8"/>
-                <TextBox Name="LoginTB" CornerRadius="8" Watermark="Логин"/>
-                <TextBox Name="PasswordTB" CornerRadius="8" PasswordChar="●" Watermark="Пароль"/>
-                <TextBlock Name="ErrorTB" Foreground="Red" TextWrapping="Wrap" HorizontalAlignment="Center"/>
-                <Button HorizontalAlignment="Stretch" CornerRadius="8" Background="BlueViolet" Foreground="White" Click="Enter_Click">Войти</Button>
-                <TextBlock Text="Тестовый вход: admin / admin123" FontSize="11" HorizontalAlignment="Center" Opacity="0.7"/>
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Task_2_EPr"
+        Background="#FFFFFF">
+
+    <Window.Styles>
+        <Style Selector="TextBox.login-input">
+            <Setter Property="Height" Value="48" />
+            <Setter Property="Padding" Value="14,11" />
+            <Setter Property="CornerRadius" Value="12" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="BorderBrush" Value="#E4E0EF" />
+            <Setter Property="Background" Value="#FAF9FD" />
+            <Setter Property="Foreground" Value="#251F39" />
+            <Setter Property="FontSize" Value="14" />
+        </Style>
+        <Style Selector="TextBox.login-input:focus">
+            <Setter Property="BorderBrush" Value="#8257E6" />
+            <Setter Property="Background" Value="#FFFFFF" />
+        </Style>
+        <Style Selector="Button.login-button">
+            <Setter Property="Height" Value="51" />
+            <Setter Property="CornerRadius" Value="12" />
+            <Setter Property="Background" Value="#7745E9" />
+            <Setter Property="Foreground" Value="#FFFFFF" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+        </Style>
+        <Style Selector="Button.login-button:pointerover">
+            <Setter Property="Background" Value="#6635D5" />
+        </Style>
+        <Style Selector="Button.login-button:pressed">
+            <Setter Property="Background" Value="#5227BA" />
+        </Style>
+    </Window.Styles>
+
+    <Grid ColumnDefinitions="320,*">
+        <Grid Grid.Column="0" ClipToBounds="True">
+            <Border>
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%">
+                        <GradientStop Color="#34216E" Offset="0" />
+                        <GradientStop Color="#6E43D7" Offset="1" />
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+
+            <Ellipse Width="290" Height="290"
+                     Fill="#10FFFFFF" Stroke="#30FFFFFF" StrokeThickness="1"
+                     HorizontalAlignment="Right" VerticalAlignment="Top"
+                     Margin="0,-100,-145,0" />
+            <Ellipse Width="215" Height="215"
+                     Fill="#10FFFFFF" Stroke="#2CFFFFFF" StrokeThickness="1"
+                     HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                     Margin="-125,0,0,-95" />
+
+            <Grid Margin="35,34,30,32" RowDefinitions="Auto,*,Auto">
+                <StackPanel Grid.Row="0" Orientation="Horizontal" Spacing="11">
+                    <Border Width="40" Height="40" CornerRadius="12" Background="#FFFFFF">
+                        <TextBlock Text="T" FontSize="23" FontWeight="Bold"
+                                   Foreground="#6B3FCE"
+                                   HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                    <StackPanel VerticalAlignment="Center" Spacing="2">
+                        <TextBlock Text="TASK 2" FontSize="16" FontWeight="Bold"
+                                   Foreground="#FFFFFF" />
+                        <TextBlock Text="TEAM WORKSPACE" FontSize="10"
+                                   Foreground="#D9C9FF" />
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" VerticalAlignment="Center" Spacing="18">
+                    <TextBlock Text="Идеи становятся&#10;результатом."
+                               FontSize="31" FontWeight="Bold" LineHeight="40"
+                               Foreground="#FFFFFF" />
+                    <TextBlock Text="Одно место для проектов, задач&#10;и совместной работы команды."
+                               FontSize="14" LineHeight="24"
+                               Foreground="#E0D6FA" />
+                    <Border Width="53" Height="4" Background="#C6A9FF"
+                            CornerRadius="2" HorizontalAlignment="Left" />
+                </StackPanel>
+
+                <TextBlock Grid.Row="2"
+                           Text="ПРОЕКТЫ   ·   ЗАДАЧИ   ·   КОМАНДА"
+                           FontSize="10" Foreground="#DED3F6" />
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Column="1" Background="#FFFFFF">
+            <StackPanel Width="350" VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+                <Border Background="#F2EDFF" CornerRadius="8"
+                        Padding="11,6" HorizontalAlignment="Left"
+                        Margin="0,0,0,18">
+                    <TextBlock Text="ДОБРО ПОЖАЛОВАТЬ"
+                               FontSize="10" FontWeight="Bold" Foreground="#7041CC" />
+                </Border>
+
+                <TextBlock Text="Вход в аккаунт"
+                           FontSize="29" FontWeight="Bold" Foreground="#211B33" />
+                <TextBlock Text="Укажите логин и пароль, чтобы&#10;продолжить работу с проектом."
+                           FontSize="14" LineHeight="22" Foreground="#777286"
+                           Margin="0,9,0,27" />
+
+                <TextBlock Text="Логин" FontSize="13" FontWeight="SemiBold"
+                           Foreground="#342E48" Margin="0,0,0,8" />
+                <TextBox Name="LoginTB" Classes="login-input"
+                         Watermark="Введите логин" Margin="0,0,0,19" />
+
+                <TextBlock Text="Пароль" FontSize="13" FontWeight="SemiBold"
+                           Foreground="#342E48" Margin="0,0,0,8" />
+                <TextBox Name="PasswordTB" Classes="login-input"
+                         Watermark="Введите пароль" Margin="0,0,0,26" />
+              
+              <TextBlock Name="ErrorTB" Foreground="Red" TextWrapping="Wrap" HorizontalAlignment="Center"/>
+
+                <Button Name="Enter" Classes="login-button" Click="Enter_Click">
+                    <StackPanel Orientation="Horizontal" Spacing="10"
+                                HorizontalAlignment="Center">
+                        <TextBlock Text="Войти" FontSize="15" FontWeight="SemiBold"
+                                   Foreground="#FFFFFF" VerticalAlignment="Center" />
+                        <TextBlock Text="→" FontSize="20" FontWeight="SemiBold"
+                                   Foreground="#FFFFFF" VerticalAlignment="Center" />
+                    </StackPanel>
+                </Button>
+              
+              <TextBlock Text="Тестовый вход: admin / admin123" FontSize="11" HorizontalAlignment="Center" Opacity="0.7"/>
+
+                <TextBlock Text="РАБОЧЕЕ ПРОСТРАНСТВО TASK 2" FontSize="10"
+                           Foreground="#B0AABB" HorizontalAlignment="Center"
+                           Margin="0,23,0,0" />
             </StackPanel>
-        </Border>
+        </Grid>
     </Grid>
 </Window>
