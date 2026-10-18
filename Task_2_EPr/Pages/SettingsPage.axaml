@@ -11,7 +11,7 @@
                     <TextBlock FontSize="15" FontWeight="DemiBold">Настройки</TextBlock>
                 </StackPanel>
                 <Border Background="{DynamicResource CardBackgroundBrush}" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10" CornerRadius="10">
-                    <ToggleSwitch Name="Theme" IsCheckedChanged="Theme_IsCheckedChanged" Content="Темная тема" Margin="30"></ToggleSwitch>
+                    <ToggleSwitch Name="ThemeSwitch" IsCheckedChanged="Theme_IsCheckedChanged" Content="Темная тема" Margin="30"></ToggleSwitch>
                 </Border>
             </StackPanel>
         </Border>

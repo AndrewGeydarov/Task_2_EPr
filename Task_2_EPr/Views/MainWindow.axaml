@@ -12,8 +12,8 @@
         <Border Background="{DynamicResource PageBackgroundBrush}" Margin="10" CornerRadius="10">
             <StackPanel>
                 <TextBlock Text="Авторизация" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 30 0 15" FontWeight="Bold"/>
-                <TextBox Name="LastNameTB" CornerRadius="10" PlaceholderText="Фамилия" Margin="0 0 0 15"></TextBox>
-                <TextBox Name="NameTB" CornerRadius="10" PlaceholderText="Имя" Margin="0 0 0 15"></TextBox>
+                <TextBox Name="LastNameTB" CornerRadius="10" Watermark="Фамилия" Margin="0 0 0 15"></TextBox>
+                <TextBox Name="NameTB" CornerRadius="10" Watermark="Имя" Margin="0 0 0 15"></TextBox>
                 <Button Name="Enter" HorizontalAlignment="Center" CornerRadius="10" Background="BlueViolet" Foreground="White" Click="Enter_Click">Войти</Button>
             </StackPanel>
         </Border>

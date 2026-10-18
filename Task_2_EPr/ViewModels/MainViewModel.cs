@@ -8,7 +8,7 @@ namespace Task_2_EPr.ViewModels;
 public partial class MainViewModel : ViewModelBase
 {
     [ObservableProperty]
-    public partial string UserName { get; set; } = "Имя Фамилия";
+    private string userName = "Имя Фамилия";
     public ObservableCollection<Project> Projects { get; set; } = new ObservableCollection<Project>()
     {
         new Project()
@@ -62,15 +62,15 @@ public partial class MainViewModel : ViewModelBase
 public class Project
 {
     public int ProjectNum { get; set; }
-    public string ProjectName { get; set; }
-    public string Date { get; set; }
+    public string ProjectName { get; set; } = string.Empty;
+    public string Date { get; set; } = string.Empty;
 }
 
 public class TeamMember
 {
     public int MemberNum { get; set; }
-    public string LastName { get; set; }
-    public string Name { get; set; }
-    public string Patronymic { get; set; }
-    public string BirthDate { get; set; }
+    public string LastName { get; set; } = string.Empty;
+    public string Name { get; set; } = string.Empty;
+    public string Patronymic { get; set; } = string.Empty;
+    public string BirthDate { get; set; } = string.Empty;
 }
