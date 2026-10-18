@@ -11,7 +11,6 @@ public partial class NavigationWindow : Window
     public NavigationWindow()
     {
         InitializeComponent();
-        DataContext = new MainViewModel();
         DesignSelectedButton(Review);
         MainPageCC.Content = new ReviewPage();
     }
@@ -20,30 +19,16 @@ public partial class NavigationWindow : Window
     {
         var selectedButton = sender as Button ?? new Button();
         DesignSelectedButton(selectedButton);
-
         switch (selectedButton.Name)
         {
-            case "Review":
-                MainPageCC.Content = new ReviewPage();
-                break;
-            case "Projects":
-                MainPageCC.Content = new ProjectsPage();
-                break;
-            case "Tasks":
-                MainPageCC.Content = new TasksPage();
-                break;
-            case "Calendar":
-                MainPageCC.Content = new CalendarPage();
-                break;
-            case "Team":
-                MainPageCC.Content = new TeamPage();
-                break;
-            case "Settings":
-                MainPageCC.Content = new SettingsPage();
-                break;
+            case "Review": MainPageCC.Content = new ReviewPage(); break;
+            case "Projects": MainPageCC.Content = new ProjectsPage(); break;
+            case "Tasks": MainPageCC.Content = new TasksPage(); break;
+            case "Calendar": MainPageCC.Content = new CalendarPage(); break;
+            case "Team": MainPageCC.Content = new TeamPage(); break;
+            case "Settings": MainPageCC.Content = new SettingsPage(); break;
             case "Exit":
-                MainWindow mainWindow = new MainWindow();
-                mainWindow.Show();
+                new MainWindow().Show();
                 Close();
                 break;
         }
@@ -52,7 +37,6 @@ public partial class NavigationWindow : Window
     private void DesignSelectedButton(Button button)
     {
         if (ChosenButton?.Name == button.Name) return;
-
         ChosenButton?.Classes.Remove("selected");
         ChosenButton = button;
         ChosenButton.Classes.Add("selected");

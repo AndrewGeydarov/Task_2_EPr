@@ -1,22 +1,18 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="250"
-        Width="400" Height="250"
+        Width="400" Height="330"
         x:Class="Task_2_EPr.Views.MainWindow"
-        Icon="/Assets/avalonia-logo.ico"
-        Title="Task_2_EPr">
-
+        Title="Авторизация">
     <Grid>
         <Border Background="{DynamicResource PageBackgroundBrush}" Margin="10" CornerRadius="10">
-            <StackPanel>
-                <TextBlock Text="Авторизация" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 30 0 15" FontWeight="Bold"/>
-                <TextBox Name="LastNameTB" CornerRadius="10" Watermark="Фамилия" Margin="0 0 0 15"></TextBox>
-                <TextBox Name="NameTB" CornerRadius="10" Watermark="Имя" Margin="0 0 0 15"></TextBox>
-                <Button Name="Enter" HorizontalAlignment="Center" CornerRadius="10" Background="BlueViolet" Foreground="White" Click="Enter_Click">Войти</Button>
+            <StackPanel Margin="20" Spacing="12" VerticalAlignment="Center">
+                <TextBlock Text="Авторизация" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold" Margin="0 0 0 8"/>
+                <TextBox Name="LoginTB" CornerRadius="8" Watermark="Логин"/>
+                <TextBox Name="PasswordTB" CornerRadius="8" PasswordChar="●" Watermark="Пароль"/>
+                <TextBlock Name="ErrorTB" Foreground="Red" TextWrapping="Wrap" HorizontalAlignment="Center"/>
+                <Button HorizontalAlignment="Stretch" CornerRadius="8" Background="BlueViolet" Foreground="White" Click="Enter_Click">Войти</Button>
+                <TextBlock Text="Тестовый вход: admin / admin123" FontSize="11" HorizontalAlignment="Center" Opacity="0.7"/>
             </StackPanel>
         </Border>
     </Grid>
-
 </Window>
