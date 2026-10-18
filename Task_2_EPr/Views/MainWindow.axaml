@@ -107,19 +107,21 @@
 
                 <TextBlock Text="Вход в аккаунт"
                            FontSize="29" FontWeight="Bold" Foreground="#211B33" />
-                <TextBlock Text="Укажите имя и фамилию, чтобы&#10;продолжить работу с проектом."
+                <TextBlock Text="Укажите логин и пароль, чтобы&#10;продолжить работу с проектом."
                            FontSize="14" LineHeight="22" Foreground="#777286"
                            Margin="0,9,0,27" />
 
-                <TextBlock Text="Фамилия" FontSize="13" FontWeight="SemiBold"
+                <TextBlock Text="Логин" FontSize="13" FontWeight="SemiBold"
                            Foreground="#342E48" Margin="0,0,0,8" />
-                <TextBox Name="LastNameTB" Classes="login-input"
-                         Watermark="Введите фамилию" Margin="0,0,0,19" />
+                <TextBox Name="LoginTB" Classes="login-input"
+                         Watermark="Введите логин" Margin="0,0,0,19" />
 
-                <TextBlock Text="Имя" FontSize="13" FontWeight="SemiBold"
+                <TextBlock Text="Пароль" FontSize="13" FontWeight="SemiBold"
                            Foreground="#342E48" Margin="0,0,0,8" />
-                <TextBox Name="NameTB" Classes="login-input"
-                         Watermark="Введите имя" Margin="0,0,0,26" />
+                <TextBox Name="PasswordTB" Classes="login-input"
+                         Watermark="Введите пароль" Margin="0,0,0,26" />
+              
+              <TextBlock Name="ErrorTB" Foreground="Red" TextWrapping="Wrap" HorizontalAlignment="Center"/>
 
                 <Button Name="Enter" Classes="login-button" Click="Enter_Click">
                     <StackPanel Orientation="Horizontal" Spacing="10"
@@ -130,6 +132,8 @@
                                    Foreground="#FFFFFF" VerticalAlignment="Center" />
                     </StackPanel>
                 </Button>
+              
+              <TextBlock Text="Тестовый вход: admin / admin123" FontSize="11" HorizontalAlignment="Center" Opacity="0.7"/>
 
                 <TextBlock Text="РАБОЧЕЕ ПРОСТРАНСТВО TASK 2" FontSize="10"
                            Foreground="#B0AABB" HorizontalAlignment="Center"

@@ -1,62 +1,14 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using Task_2_EPr.Services;
 
 namespace Task_2_EPr.ViewModels;
 
 public partial class MainViewModel : ViewModelBase
 {
-    [ObservableProperty]
-    private string userName = "Имя Фамилия";
-    public ObservableCollection<Project> Projects { get; set; } = new ObservableCollection<Project>()
-    {
-        new Project()
-        {
-            ProjectNum = 1,
-            ProjectName = "Проект медицинской клиники",
-            Date = "12.10.2026"
-        },
-        new Project()
-        {
-            ProjectNum = 2,
-            ProjectName = "Проект автосервиса",
-            Date = "12.10.2026"
-        },
-        new Project()
-        {
-            ProjectNum = 3,
-            ProjectName = "Просто проект",
-            Date = "Когда угодно"
-        },
-    };
-    public ObservableCollection<TeamMember> TeamMembers { get; set; } = new ObservableCollection<TeamMember>()
-    {
-        new TeamMember()
-        {
-            MemberNum = 1,
-            LastName = "Валиев",
-            Name = "Карим",
-            Patronymic = "Динарович",
-            BirthDate = "11.01.2007"
-        },
-        new TeamMember()
-        {
-            MemberNum = 2,
-            LastName = "Волков",
-            Name = "Данил",
-            Patronymic = "Сергеевич",
-            BirthDate = "01.02.2006"
-        },
-        new TeamMember()
-        {
-            MemberNum = 3,
-            LastName = "Чухарев",
-            Name = "Леонид",
-            Patronymic = "Валерьевич",
-            BirthDate = "25.10.2007"
-        }
-    };
+    [ObservableProperty] private string userName = "Пользователь";
+    public ObservableCollection<Project> Projects { get; set; } = DatabaseService.GetProjects();
+    public ObservableCollection<TeamMember> TeamMembers { get; set; } = DatabaseService.GetTeamMembers();
 }
 
 public class Project
