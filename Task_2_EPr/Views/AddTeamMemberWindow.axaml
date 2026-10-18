@@ -1,0 +1,28 @@
+<Window xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Class="Task_2_EPr.Views.AddTeamMemberWindow" Title="Добавление участника" Width="480" Height="510" MinWidth="440" CanResize="False" WindowStartupLocation="CenterOwner" ShowInTaskbar="False">
+    <Grid RowDefinitions="Auto,*,Auto" Background="{DynamicResource WindowBackgroundBrush}">
+        <Border BorderBrush="{DynamicResource DefaultBorderBrush}" BorderThickness="0,0,0,1" Padding="24,19">
+            <StackPanel Spacing="5">
+                <TextBlock Text="Новый участник" FontSize="21" FontWeight="SemiBold" Foreground="{DynamicResource PrimaryTextBrush}"/>
+                <TextBlock Text="Укажите данные участника команды" FontSize="12" Foreground="{DynamicResource SecondaryTextBrush}"/>
+            </StackPanel>
+        </Border>
+        <StackPanel Grid.Row="1" Margin="24,16,24,10" Spacing="6">
+            <TextBlock Text="Фамилия *" FontSize="13" FontWeight="Medium" Foreground="{DynamicResource PrimaryTextBrush}"/>
+            <TextBox x:Name="LastNameBox" Watermark="Введите фамилию" CornerRadius="7" MaxLength="80"/>
+            <TextBlock Text="Имя *" FontSize="13" FontWeight="Medium" Margin="0,5,0,0" Foreground="{DynamicResource PrimaryTextBrush}"/>
+            <TextBox x:Name="FirstNameBox" Watermark="Введите имя" CornerRadius="7" MaxLength="80"/>
+            <TextBlock Text="Отчество" FontSize="13" FontWeight="Medium" Margin="0,5,0,0" Foreground="{DynamicResource PrimaryTextBrush}"/>
+            <TextBox x:Name="PatronymicBox" Watermark="При наличии" CornerRadius="7" MaxLength="80"/>
+            <TextBlock Text="Дата рождения *" FontSize="13" FontWeight="Medium" Margin="0,5,0,0" Foreground="{DynamicResource PrimaryTextBrush}"/>
+            <DatePicker x:Name="BirthDatePicker" HorizontalAlignment="Stretch"/>
+            <TextBlock Text="* Обязательные поля" FontSize="12" Margin="0,3,0,0" Foreground="{DynamicResource SecondaryTextBrush}"/>
+            <TextBlock x:Name="ErrorText" Foreground="#D9534F" FontSize="12" IsVisible="False" TextWrapping="Wrap"/>
+        </StackPanel>
+        <Border Grid.Row="2" BorderBrush="{DynamicResource DefaultBorderBrush}" BorderThickness="0,1,0,0" Padding="24,14">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10">
+                <Button Content="Отмена" MinWidth="100" HorizontalContentAlignment="Center" CornerRadius="7" Padding="14,8" Click="Cancel_Click"/>
+                <Button Content="Добавить" MinWidth="112" HorizontalContentAlignment="Center" CornerRadius="7" Padding="14,8" Background="#7656C9" Foreground="White" Click="Add_Click"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
